@@ -1,19 +1,17 @@
-var firstName = document.querySelector('#firstName');
-var firstNameIcon = document.querySelector('#firstNameIcon');
+var fullName = document.querySelector('#fullName');
+var fullNameIcon = document.querySelector('#fullNameIcon');
 var errorMessage = document.querySelector('#formError');
+var formSubmit = document.querySelector('#formSubmit');
 
-firstName.addEventListener('blur', function(event) {
+fullName.addEventListener('blur', function(event) {
   var value = event.target.value;
-  var isLetters = RegExp('^[a-zA-Z s]*$').test(value);
+  var isLetters = RegExp('^[a-zA-Z ]*$').test(value);
   if (isLetters) {
-    firstNameIcon.style.visibility = 'hidden';
-    errorMessage.style.visibility = 'hidden';
+    fullNameIcon.style.visibility = 'hidden';
     errorMessage.textContent = '';
   } else {
-    firstNameIcon.style.visibility = 'visible';
-    errorMessage.style.visibility = 'visible';
+    fullNameIcon.style.visibility = 'visible';
     errorMessage.textContent =
       'Names cannot contain numbers or special characters';
   }
-  console.log(isLetters);
 });

@@ -1,13 +1,13 @@
 BEGIN;
 
--- DROP TABLE IF EXISTS /*table names*/ CASCADE;
+DROP TABLE IF EXISTS users CASCADE;
 
--- CREATE TABLE /*table name*/ (
---   id         SERIAL         PRIMARY KEY,
---   title      VARCHAR(300)   NOT NULL
--- );
+CREATE TABLE users (
+  id            SERIAL         PRIMARY KEY,
+  username      VARCHAR(100)   NOT NULL
+);
 
--- INSERT INTO /*table name(title)*/ VALUES
---   ('How it feels to learn Javascript in 2016')
+INSERT INTO users(username) VALUES
+  ('astroash');
 
 COMMIT;

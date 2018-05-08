@@ -4,7 +4,7 @@
 }
 
 body {
-  background: linear-gradient(#636762, #383a38);
+  background: linear-gradient(#2abb9c, #04bb94);
 }
 
 main {
@@ -12,7 +12,7 @@ main {
   height: 100vh;
   margin: 0 auto;
   font-family: 'Courier New', Courier, monospace;
-  background: linear-gradient(to bottom right, #f7a704, #fbd587);
+  background: linear-gradient(to bottom right, #f4f7f8, #dfe6e8);
 }
 
 h1 {
@@ -31,14 +31,17 @@ form {
   font-size: 1.2rem;
 }
 
-label {
+.form__label {
   flex: 2;
   padding: 0.2rem;
+  margin-right: 1rem;
+  text-align: right;
 }
 
 .form__input {
   flex: 3;
   padding: 0.2rem;
+  border: none;
 }
 
 i {
@@ -49,7 +52,6 @@ i {
 }
 
 .form__error {
-  visibility: hidden;
   margin-bottom: 0.5rem;
   height: 1rem;
   text-align: center;
@@ -62,11 +64,14 @@ i {
   margin-right: 2rem;
 }
 .form__submit {
+  color: white;
+  background: #2abb9c;
+  border-width: 0 0 3px;
+  border-color: #249e84;
   font-family: 'Courier New', Courier, monospace;
-  border-radius: 5px;
   font-size: 1rem;
   padding: 0.25rem;
 }
 .form__submit:hover {
-  background: wheat;
+  background: #23dcb4;
 }

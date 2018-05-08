@@ -1,9 +1,10 @@
-var express = require('express');
-var router = express.Router();
+const router = require('express').Router();
+const homePage = require('./home');
+const form = require('./form');
+const success = require('./success');
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+router.get('/', homePage);
+router.get('/success', success);
+router.post('/api/form', form);
 
 module.exports = router;
