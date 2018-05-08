@@ -1,0 +1,34 @@
+<main>
+  <h1>Let's get Validating!</h1>
+  <form action="/action_page.php">
+    <div class='form__row'>
+      <label for="firstName">First Name:</label>
+      <input type="text" id="firstName" class='form__input'>
+      <i class="fas fa-exclamation-circle" id='firstNameIcon'></i>
+    </div>
+
+    <div class='form__row'>
+      <label for="lastName">Last Name:</label>
+      <input type="text" id="lastName" class='form__input'>
+      <i class="fas fa-exclamation-circle"></i>
+    </div>
+
+    <div class='form__row'>
+      <label for="password">Password:</label>
+      <input type="password" id="password" class='form__input'>
+      <i class="fas fa-exclamation-circle"></i>
+    </div>
+
+    <div class='form__row'>
+      <label for="confirmPassword">Confirm Password:</label>
+      <input type="password" id="confirmPassword" class='form__input'>
+      <i class="fas fa-exclamation-circle"></i>
+    </div>
+
+    <p class='form__error' id='formError'>Error</p>
+
+    <div class='form__row form__row_submit'>
+      <input type="submit" value="Submit" class='form__submit'>
+    </div>
+  </form>
+</main>
