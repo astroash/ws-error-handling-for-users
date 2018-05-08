@@ -2,7 +2,6 @@
   "name": "ws-validation",
   "version": "0.0.0",
   "scripts": {
-    "test": "tape tests/*.test.js | tap-spec",
     "start": "node ./bin/www",
     "dev": "nodemon ./bin/www"
   },
@@ -15,16 +14,10 @@
     "express-handlebars": "^3.0.0",
     "hbs": "~4.0.1",
     "morgan": "~1.8.1",
-    "pg": "^7.3.0",
-    "serve-favicon": "~2.4.2"
+    "pg": "^7.4.3",
+    "serve-favicon": "^2.4.5"
   },
   "devDependencies": {
-    "codecov": "^2.3.0",
-    "nock": "^9.0.20",
-    "nodemon": "^1.12.1",
-    "nyc": "^11.2.1",
-    "supertest": "^3.0.0",
-    "tap-spec": "^4.1.1",
-    "tape": "^4.8.0"
+    "nodemon": "^1.17.4"
   }
 }
