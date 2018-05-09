@@ -1,0 +1,34 @@
+<main>
+  <h1>Let's get Validating!</h1>
+  <form action="/api/form">
+    <div class='form__row'>
+      <label for="fullName" class='form__label'>Full Name:</label>
+      <input type="text" id="fullName" class='form__input'>
+      <i class="fas fa-exclamation-circle" id='fullNameIcon'></i>
+    </div>
+
+    <div class='form__row'>
+      <label for="userName" class='form__label'>Username:</label>
+      <input type="text" id="userName" class='form__input'>
+      <i class="fas fa-exclamation-circle" id='userNameIcon'></i>
+    </div>
+
+    <div class='form__row'>
+      <label for="password" class='form__label'>Password:</label>
+      <input type="password" id="password" class='form__input'>
+      <i class="fas fa-exclamation-circle" id='passwordIcon'></i>
+    </div>
+
+    <div class='form__row'>
+      <label for="confirmPassword" class='form__label'>Confirm Password:</label>
+      <input type="password" id="confirmPassword" class='form__input'>
+      <i class="fas fa-exclamation-circle" id='confirmPasswordIcon'></i>
+    </div>
+
+    <p class='form__error' id='formError'></p>
+
+    <div class='form__row form__row_submit'>
+      <input type="submit" value="Submit" class='form__submit' id='formSubmit'>
+    </div>
+  </form>
+</main>
