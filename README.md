@@ -1,8 +1,8 @@
 # Error Handling for Users
 
-Handling errors is useful as it allows us to stop errors from crashing our server. When we start out it's useful to console log these errors to see what happened, but this isn't very useful for the users of our site. In this workshop we are going to learn how to avoid errors with validation, handle the remaining errors and then safely deliver them to the front end so users can see what happened. 
+Error handling is great as it allows us to stop errors from crashing our server. When we start out it's useful to console log these errors to see what happened, but this isn't very useful for the users of our site. In this workshop we are going to learn how to avoid errors with validation, handle the remaining errors and then safely deliver them to the front end so users can see what happened. 
 
-## Prerequisits 🙇🏽‍♀️
+## Prerequisits 🙇🏽‍
 Knowledge of:
 - sql databases
 - express node server
@@ -56,9 +56,9 @@ The answer is _nope_, if we don't send relevant responses to our client AND hand
 
 We build web apps for users, so in this workshop we're going to take a user centered approach to error handling.
 
-To model this approach we are going to edit a simple site that has a form to allows users to sign up by entering their name, username, and password. We are going to break our user centered error handling into 3 parts:
+To model this approach we are going to edit a simple site with a form that allows users to sign up by entering their details. We are going to break our user centered error handling into 3 parts:
 - informing our users of errors
-- validating data on the frontend
+- validating data to avoid errors
 - handling errors on our server _to inform our users_
 
 ## Displaying error messages 🚨
@@ -66,13 +66,13 @@ Displaying errors on your website allows users to know what went wrong. This mig
 - their input is invalid
 - the action they have attempted did not work
 
-If you go to `views/home.hbs` you can see the form that has been created for users to input information. Each input is followed by an error icon that is `hidden` by default. There is also an error paragraph at the bottom of the form that is currently empty.
+If you go to `views/home.hbs` you can see the form that has been created for users to input information. Each input is followed by an error icon that is `hidden` by default. There is also an error `<p>` tag at the bottom of the form that is currently empty.
 
 In `main.js` an event listener has been added to the "Full Name" input box. Front end validation is being used to check if this contains no numbers and special characters on `blur`.
 
 _NB: did you know on `blur` is an event type for when elements go out of focus. You can find out more about [different event types in MDNs docs](https://developer.mozilla.org/en-US/docs/Web/Events)_
 
-Go to localhost:3000 and test the "Full Name" input box to see how this works
+Go to http://localhost:3000/ and test the "Full Name" input box to see how this works
 ### 🌟 Challenge One 🌟
 Using the starting code as an example, create error messages for the other 3 input boxes.
 
@@ -110,7 +110,7 @@ Remember to also [set your status code](https://expressjs.com/en/api.html#res.st
 [A list of status codes can be found here](https://httpstatuses.com/).  
 [Or if you prefer a more visual explanation, here's status codes as cats](https://http.cat/).
 
-Now, on the front end you can check the status code of your response and set the error `<p>` tag correctly.
+Now, on the front end you can check your response object and set the error `<p>` tag correctly.
 
 ## Back End Error Handling 🚫
 Now we can check if the user already exists in our database.
@@ -161,7 +161,15 @@ Write an if/else statement to take `rows.exists` as a condition. If the user alr
 ```
 You will need to write logic in the return to your `fetch` to display the error message if the user already exists. 
 
-If the user doesn't exists we want to return a `200` status code to tell the front end everything went well. Then we can redirect to `/success` in the response of your fetch using the window object:
+If the user doesn't exists we want to return a success response object to tell the front end everything went well such as:
+```
+{
+  success: true,
+  message: [a description of the success]
+}
+```
+
+ Then in the fetch `.then` we can match on our `success` to redirect to `/success`. We can do this using the window object:
 ```
 window.location = '/success';
 ```
@@ -177,4 +185,4 @@ Now we can display the correct error message on the front end!
 ## Nice WORK 🎉
 
 Congratulations, ✨ YOU DID IT ✨ You've safely avoided errors with validation, and handles the ones that slipped through by sending clear error messages for your users to see.
-# 🙌🏽 🙌🏽 🙌🏽 
+# 🙌🏽 
