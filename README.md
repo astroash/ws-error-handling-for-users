@@ -4,9 +4,9 @@ Error handling is great as it allows us to stop errors from crashing our server.
 
 ## Prerequisits 🙇🏽‍
 Knowledge of:
+- vanilla js dom manipulation
 - sql databases
 - express node server
-- handlebars
 - promises
 
 ## Get Up and running
@@ -66,7 +66,7 @@ Displaying errors on your website allows users to know what went wrong. This mig
 - their input is invalid
 - the action they have attempted did not work
 
-If you go to `views/home.hbs` you can see the form that has been created for users to input information. Each input is followed by an error icon that is `hidden` by default. There is also an error `<p>` tag at the bottom of the form that is currently empty.
+If you go to `public/home.html` you can see the form that has been created for users to input information. Each input is followed by an error icon that is `hidden` by default. There is also an error `<p>` tag at the bottom of the form that is currently empty.
 
 In `main.js` an event listener has been added to the "Full Name" input box. Front end validation is being used to check if this contains no numbers and special characters on `blur`.
 

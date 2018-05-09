@@ -24,7 +24,6 @@ module.exports = (req, res, next) => {
   }
 
   checkUser(userName).then(data => {
-    console.log(data.rows);
     
     if (!data.rows[0].exists) {
       return res.send({ success: true, message: 'User successfully created'})
